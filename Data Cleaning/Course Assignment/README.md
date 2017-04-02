@@ -21,3 +21,13 @@ run_analysis(base_dir='../Foo', statistics_filename='stats.csv', summary_filenam
 ```
 
 Here, it will search for the UCI HAR Dataset in a directory *Foo*, just below the parent directory.  Moreover, the files created will be named *stats.csv* and *sum.csv*.
+
+To create a space delimeted version of the output (as required by the course submission page) the table return of the *run_analysis()* function can be used as follows.  Given the same prerequisites as the first example, one will simply,
+
+```R
+source("run_analysis.R")
+dts <- run_analysis();
+write.table( dts[2], 'uci_har_summary.txt', row.name=FALSE);
+```
+
+and the data will be written to the file *uci_har_summary.txt*. 
